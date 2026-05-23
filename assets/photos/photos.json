@@ -1,0 +1,34 @@
+[
+  {
+    "src": "photo-01.jpg",
+    "alt": "照片 1"
+  },
+  {
+    "src": "photo-02.jpg",
+    "alt": "照片 2"
+  },
+  {
+    "src": "photo-03.jpg",
+    "alt": "照片 3"
+  },
+  {
+    "src": "photo-04.jpg",
+    "alt": "照片 4"
+  },
+  {
+    "src": "photo-05.jpg",
+    "alt": "照片 5"
+  },
+  {
+    "src": "photo-06.jpg",
+    "alt": "照片 6"
+  },
+  {
+    "src": "photo-07.jpg",
+    "alt": "照片 7"
+  },
+  {
+    "src": "photo-08.jpg",
+    "alt": "照片 8"
+  }
+]

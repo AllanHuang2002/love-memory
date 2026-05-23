@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>管理我们的纪念册</title>
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell admin-shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark">囍</span>
+          <span>我们的纪念册</span>
+        </a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="./index.html">首页</a>
+          <button class="link-button" id="logout-button" type="button" hidden>退出</button>
+        </nav>
+      </header>
+
+      <main class="admin-layout">
+        <section class="admin-hero">
+          <p class="eyebrow">Admin</p>
+          <h1>把今天的新想法放进未来</h1>
+          <p>
+            用白名单邮箱登录后，可以新增、编辑和删除愿望、项目、每年循环纪念日。数据会保存到 Supabase。
+          </p>
+        </section>
+
+        <section class="panel" id="setup-panel">
+          <h2>连接状态</h2>
+          <p id="setup-status">正在检查 Supabase 配置...</p>
+        </section>
+
+        <section class="panel" id="login-panel" hidden>
+          <h2>邮箱登录</h2>
+          <form class="login-form" id="login-form">
+            <label>
+              邮箱
+              <input id="email-input" type="email" required placeholder="you@example.com" />
+            </label>
+            <button class="button primary" type="submit">发送登录链接</button>
+          </form>
+        </section>
+
+        <section class="editor-grid" id="editor-panel" hidden>
+          <form class="panel item-form" id="item-form">
+            <h2 id="form-title">添加记录</h2>
+            <input id="item-id" type="hidden" />
+            <label>
+              类型
+              <select id="item-type" required>
+                <option value="wish">愿望</option>
+                <option value="project">项目</option>
+                <option value="anniversary">每年纪念日</option>
+              </select>
+            </label>
+            <label>
+              标题
+              <input id="item-title" maxlength="80" required placeholder="比如：去海边看一次日出" />
+            </label>
+            <label>
+              日期
+              <input id="item-date" type="date" />
+            </label>
+            <label id="item-status-field">
+              状态
+              <select id="item-status">
+                <option value="todo">未完成</option>
+                <option value="doing">进行中</option>
+                <option value="done">已完成</option>
+              </select>
+            </label>
+            <label>
+              图片地址
+              <input id="item-image" type="url" placeholder="https://..." />
+            </label>
+            <label>
+              描述
+              <textarea id="item-description" rows="5" placeholder="写一点故事或备注"></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="button primary" type="submit">保存</button>
+              <button class="button ghost" id="reset-form" type="button">清空</button>
+            </div>
+          </form>
+
+          <section class="panel">
+            <div class="list-header">
+              <h2>已有记录</h2>
+              <select id="filter-type" aria-label="筛选类型">
+                <option value="all">全部</option>
+                <option value="wish">愿望</option>
+                <option value="project">项目</option>
+                <option value="anniversary">纪念日</option>
+              </select>
+            </div>
+            <div class="admin-list" id="admin-list"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./src/admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我们的纪念册</title>
+    <meta
+      name="description"
+      content="记录愿望、项目、纪念日和一起走过的每一个重要瞬间。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="返回首页">
+          <span class="brand-mark">囍</span>
+          <span>我们的纪念册</span>
+        </a>
+        <nav class="nav-links" aria-label="页面导航">
+          <a href="#wishes">愿望</a>
+          <a href="#projects">项目</a>
+          <a href="#anniversaries">纪念日</a>
+          <a href="./admin.html">管理</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-eyebrow">Since 2020.01.01</p>
+            <h1 id="couple-title">把日子过成可以回看的光</h1>
+            <p class="hero-text" id="hero-subtitle">
+              愿望、计划、纪念日和小小瞬间，都在这里慢慢长成我们的故事。
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#anniversaries">查看纪念日</a>
+              <a class="button ghost" href="./admin.html">添加新记录</a>
+            </div>
+          </div>
+
+          <div class="time-card" aria-label="相恋计时">
+            <span class="time-card-label">我们已经一起走过</span>
+            <div class="time-grid">
+              <div>
+                <strong id="days-together">0</strong>
+                <span>天</span>
+              </div>
+              <div>
+                <strong id="hours-together">00</strong>
+                <span>时</span>
+              </div>
+              <div>
+                <strong id="minutes-together">00</strong>
+                <span>分</span>
+              </div>
+              <div>
+                <strong id="seconds-together">00</strong>
+                <span>秒</span>
+              </div>
+            </div>
+            <p id="next-anniversary">正在读取最近的纪念日...</p>
+          </div>
+        </section>
+
+        <section class="summary-strip" aria-label="内容摘要">
+          <article>
+            <span id="wish-count">0</span>
+            <p>个愿望</p>
+          </article>
+          <article>
+            <span id="project-count">0</span>
+            <p>个项目</p>
+          </article>
+          <article>
+            <span id="anniversary-count">0</span>
+            <p>个纪念日</p>
+          </article>
+        </section>
+
+        <section class="special-days" aria-label="固定纪念日">
+          <div class="special-hero">
+            <span>Love Days</span>
+            <h2>我们的纪念日</h2>
+          </div>
+          <div class="special-list" id="special-day-list"></div>
+        </section>
+
+        <section class="photo-reel" aria-label="照片轮播">
+          <div class="photo-stage" id="photo-stage">
+            <div class="photo-placeholder">把照片放进 assets/photos 后，这里会循环展示</div>
+          </div>
+          <div class="photo-copy">
+            <p>Gallery</p>
+            <h2>一些会反复想起的画面</h2>
+          </div>
+        </section>
+
+        <section class="section" id="anniversaries">
+          <div class="section-heading">
+            <p>Anniversaries</p>
+            <h2>快要到来的日子</h2>
+          </div>
+          <div class="card-grid" id="anniversary-list"></div>
+        </section>
+
+        <section class="section alt" id="wishes">
+          <div class="section-heading">
+            <p>Wishlist</p>
+            <h2>我们想一起完成的愿望</h2>
+          </div>
+          <div class="card-grid" id="wish-list"></div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading">
+            <p>Projects</p>
+            <h2>正在推进的小计划</h2>
+          </div>
+          <div class="card-grid" id="project-list"></div>
+        </section>
+
+        <section class="section alt" id="timeline">
+          <div class="section-heading">
+            <p>Timeline</p>
+            <h2>时间线</h2>
+          </div>
+          <div class="timeline" id="timeline-list"></div>
+        </section>
+
+        <section class="period-calendar" id="period-calendar" aria-label="周期日历">
+          <div class="calendar-heading">
+            <div>
+              <p>Cycle</p>
+              <h2>周期日历</h2>
+            </div>
+            <div class="calendar-actions">
+              <button class="icon-button" id="calendar-prev" type="button" aria-label="上个月">‹</button>
+              <strong id="calendar-title"></strong>
+              <button class="icon-button" id="calendar-next" type="button" aria-label="下个月">›</button>
+            </div>
+          </div>
+          <div class="calendar-legend" aria-label="图例">
+            <span><i class="legend-dot actual"></i>已记录</span>
+            <span><i class="legend-dot predicted"></i>预测</span>
+          </div>
+          <form class="period-form" id="period-form">
+            <label>
+              开始
+              <input id="period-start" type="date" required />
+            </label>
+            <label>
+              结束
+              <input id="period-end" type="date" required />
+            </label>
+            <button class="button primary" type="submit">标记红色范围</button>
+            <button class="button ghost" id="period-clear" type="button">清空本机记录</button>
+          </form>
+          <div class="period-ranges" id="period-ranges"></div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
