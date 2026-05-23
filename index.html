@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
+    <section class="lock-screen" id="lock-screen" hidden>
+      <form class="lock-card" id="lock-form">
+        <span class="brand-mark">囍</span>
+        <h1>我们的纪念册</h1>
+        <input id="lock-password" type="password" placeholder="输入访问密码" autocomplete="current-password" />
+        <button class="button primary" type="submit">进入</button>
+        <p id="lock-message"></p>
+      </form>
+    </section>
     <div class="page-shell">
       <header class="topbar">
         <a class="brand" href="./index.html" aria-label="返回首页">
@@ -168,6 +177,7 @@
       </main>
     </div>
 
+    <script type="module" src="./src/access.js"></script>
     <script type="module" src="./src/app.js"></script>
   </body>
 </html>

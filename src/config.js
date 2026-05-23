@@ -70,6 +70,11 @@ export const PERIOD_TRACKER = {
   ],
 };
 
+export const ACCESS_CONTROL = {
+  enabled: true,
+  passwordHash: "8b41ef8dc4bd3bd6127b55d89251feb4f136cdd0ba1690c4d2837c849d5c18c2",
+};
+
 export const SUPABASE_CONFIG = {
   url: "https://nefyxensfvviqmktznzb.supabase.co",
   anonKey: "sb_publishable_9YnP0X2R7_DVFQUm36s9LA_BuiRC9Pj",
